@@ -1,5 +1,5 @@
 {
-  "name": "dev-stack",
+  "name": "dev-stack-builder",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,12 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "vite": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-toastify": "^11.1.0",
-    "vite": "latest"
+    "react-toastify": "latest"
   },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^6.1.1"
-  }
+  "devDependencies": {}
 }
