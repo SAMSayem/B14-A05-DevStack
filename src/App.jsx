@@ -85,3 +85,88 @@ const handleSignIn = () => {
 
 
   }
+
+  function Hero() {
+  const scrollToTechnologies = () => {
+    document
+      .getElementById('technologies')
+      ?.scrollIntoView({
+        behavior: 'smooth',
+      });
+  };
+
+  const gradientTextStyle = {
+    backgroundImage: GRADIENT,
+    WebkitBackgroundClip: 'text',
+    backgroundClip: 'text',
+    color: 'transparent',
+  };
+
+  return (
+    <section
+      id="home"
+      className="hero-section">
+      <div className="container hero-grid">
+
+        <div className="hero-copy">
+
+          <p className="eyebrow">
+            BUILD YOUR PERFECT DEVELOPER TOOLKIT
+          </p>
+
+          <h1>
+            Build your stack{' '}
+            <span
+              className="gradient-text"
+              style={gradientTextStyle}>
+              with confidence.
+            </span>
+          </h1>
+
+          <p className="hero-description">
+            Explore popular technologies, compare the basics,
+            and add the tools you need to your own development stack.
+          </p>
+
+          <div className="hero-buttons">
+
+            <button
+              className="primary-button"
+              style={{ backgroundImage: GRADIENT }}
+              onClick={scrollToTechnologies} >
+              Explore Technologies
+            </button>
+
+            <a
+              className="secondary-button"
+              href="#about">
+              Learn More
+            </a>
+
+          </div>
+
+          <div className="hero-points">
+            <span>✓ Beginner friendly</span>
+            <span>✓ Modern tools</span>
+            <span>✓ Build your stack</span>
+          </div>
+
+        </div>
+
+        <div className="hero-image-wrap">
+
+          <div className="soft-blob soft-blob-one"></div>
+
+          <div className="soft-blob soft-blob-two"></div>
+
+          <img
+            className="hero-image"
+            src="/assets/banner-stack.png"
+            alt="Illustration of a modern technology stack"/>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
