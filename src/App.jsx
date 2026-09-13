@@ -262,8 +262,7 @@ function Technologies() {
   return (
     <section
       id="technologies"
-      className="technology-section"
-    >
+      className="technology-section">
       <div className="container">
 
         <div className="section-heading">
@@ -283,8 +282,7 @@ function Technologies() {
                   WebkitBackgroundClip: 'text',
                   backgroundClip: 'text',
                   color: 'transparent',
-                }}
-              >
+                }}>
                 Technologies
               </span>
             </h2>
@@ -325,8 +323,7 @@ function Technologies() {
                     (item) =>
                       item.id === technology.id
                   )}
-                  onAdd={addToStack}
-                />
+                  onAdd={addToStack}/>
 
               ))}
 
@@ -335,8 +332,7 @@ function Technologies() {
             <StackSidebar
               stack={stack}
               onRemove={removeFromStack}
-              onRemoveAll={removeAll}
-            />
+              onRemoveAll={removeAll}/>
 
           </div>
 
@@ -344,5 +340,104 @@ function Technologies() {
 
       </div>
     </section>
+  );
+}
+
+function SimpleInfoSections() {
+  return (
+    <>
+
+      <section
+        id="projects"
+        className="info-section muted-section"
+      >
+        <div className="container info-grid">
+
+          <div>
+
+            <p className="eyebrow">
+              PROJECTS
+            </p>
+
+            <h2>
+              Start with the right foundation.
+            </h2>
+
+          </div>
+
+          <p>
+            Use your selected technologies as a
+            simple starting point for portfolio sites,
+            dashboards, APIs, e-commerce projects,
+            and more.
+          </p>
+
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="info-section"
+      >
+        <div className="container info-grid">
+
+          <div>
+
+            <p className="eyebrow">
+              ABOUT DEV STACK
+            </p>
+
+            <h2>
+              Simple choices. Clear learning path.
+            </h2>
+
+          </div>
+
+          <p>
+            Dev Stack is a small learning project
+            that helps beginners understand where
+            common frontend, backend, database,
+            styling, DevOps, and developer tools
+            fit together.
+          </p>
+
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="info-section muted-section"
+      >
+        <div className="container contact-box">
+
+          <div>
+
+            <p className="eyebrow">
+              CONTACT
+            </p>
+
+            <h2>
+              Keep building and keep learning.
+            </h2>
+
+            <p>
+              Connect the tools, test your ideas,
+              and grow your development skills one
+              project at a time.
+            </p>
+
+          </div>
+
+          <a
+            className="secondary-button"
+            href="mailto:hello@devstack.example"
+          >
+            Contact Dev Stack
+          </a>
+
+        </div>
+      </section>
+
+    </>
   );
 }
