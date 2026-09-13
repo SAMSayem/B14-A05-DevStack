@@ -170,3 +170,179 @@ const handleSignIn = () => {
     </section>
   );
 }
+
+function Technologies() {
+  const [technologies, setTechnologies] = useState([]);
+  const [stack, setStack] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/data/technologies.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to load data');
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        setTechnologies(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        toast.error(
+          'Could not load technologies.'
+        );
+
+        setLoading(false);
+      });
+  }, []);
+
+
+
+  const addToStack = (technology) => {
+    const alreadyAdded = stack.some(
+      (item) => item.id === technology.id
+    );
+
+    if (alreadyAdded) {
+      toast.warning(
+        `${technology.name} is already in your stack.`
+      );
+
+      return;
+    }
+
+    setStack((currentStack) => [
+      ...currentStack,
+      technology,
+    ]);
+
+    toast.success(
+      `${technology.name} added to your stack.`
+    );
+  };
+
+  
+
+  const removeFromStack = (id) => {
+    const removedTechnology = stack.find(
+      (item) => item.id === id
+    );
+
+    setStack((currentStack) =>
+      currentStack.filter(
+        (item) => item.id !== id
+      )
+    );
+
+    toast.info(
+      `${removedTechnology?.name || 'Technology'} removed from your stack.`
+    );
+  };
+
+  
+
+  const removeAll = () => {
+    if (stack.length === 0) {
+      toast.info(
+        'Your stack is already empty.'
+      );
+
+      return;
+    }
+
+    setStack([]);
+
+    toast.info(
+      'All technologies removed from your stack.'
+    );
+  };
+
+  return (
+    <section
+      id="technologies"
+      className="technology-section"
+    >
+      <div className="container">
+
+        <div className="section-heading">
+
+          <div>
+
+            <p className="eyebrow">
+              EXPLORE THE TOOLS
+            </p>
+
+            <h2>
+              Explore the{' '}
+              <span
+                className="gradient-text"
+                style={{
+                  backgroundImage: GRADIENT,
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent',
+                }}
+              >
+                Technologies
+              </span>
+            </h2>
+
+          </div>
+
+          <p>
+            Choose the tools that match your project
+            and build a stack that makes sense for you.
+          </p>
+
+        </div>
+
+        {loading ? (
+
+          <div className="loading-state">
+
+            <div className="spinner"></div>
+
+            <p>
+              Loading technologies...
+            </p>
+
+          </div>
+
+        ) : (
+
+          <div className="technology-layout">
+
+            <div className="technology-grid">
+
+              {technologies.map((technology) => (
+
+                <TechnologyCard
+                  key={technology.id}
+                  technology={technology}
+                  selected={stack.some(
+                    (item) =>
+                      item.id === technology.id
+                  )}
+                  onAdd={addToStack}
+                />
+
+              ))}
+
+            </div>
+
+            <StackSidebar
+              stack={stack}
+              onRemove={removeFromStack}
+              onRemoveAll={removeAll}
+            />
+
+          </div>
+
+        )}
+
+      </div>
+    </section>
+  );
+}

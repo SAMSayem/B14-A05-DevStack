@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vite": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-toastify": "latest"
+    "react-toastify": "^11.1.0",
+    "vite": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1"
+  }
 }
