@@ -490,7 +490,7 @@ function Technologies() {
 
           </div>
 
-        ()
+        ) : (
 
           <div className="technology-layout">
 
