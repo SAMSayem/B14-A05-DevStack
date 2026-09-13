@@ -221,7 +221,7 @@ a {
 
 .primary-button:hover,
 .secondary-button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-5px);
 }
 
 .hero-points {
@@ -308,6 +308,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  
 }
 
 /* Technology Card */
@@ -318,12 +319,14 @@ a {
   padding: 20px;
   background: white;
 
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+ 
+  box-shadow: 0 10px 22px rgba(236, 72, 153, 0.18);
 
   display: flex;
   flex-direction: column;
 
   min-height: 290px;
+  transform: translateY(-5px);
 }
 
 .card-top,
@@ -333,6 +336,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  
 }
 
 .icon-box {
@@ -344,6 +348,7 @@ a {
 
   display: grid;
   place-items: center;
+  
 }
 
 .icon-box img {
@@ -365,6 +370,7 @@ a {
 .technology-card h3 {
   margin: 20px 0 10px;
   font-size: 20px;
+  
 }
 
 .card-description {
@@ -373,6 +379,7 @@ a {
   font-size: 13px;
   line-height: 1.65;
   min-height: 66px;
+  
 }
 
 .card-info {
@@ -421,11 +428,13 @@ a {
 
   font-size: 12px;
   font-weight: 700;
+  
 }
 
 .add-button:hover:not(:disabled) {
   border-color: #ec4899;
   color: #db2777;
+  transform: translateY(-5px);
 }
 
 .add-button:disabled {
@@ -447,6 +456,7 @@ a {
   background: #fff;
 
   padding: 20px;
+  
 
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
 }
@@ -601,6 +611,7 @@ a {
   color: #94a3b8;
 
   font-size: 20px;
+  
 }
 
 .remove-all-button {
@@ -619,6 +630,7 @@ a {
   font-size: 12px;
 
   font-weight: 700;
+  
 }
 
 /* Loading */
